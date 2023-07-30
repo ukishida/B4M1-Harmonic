@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>harmonic module &mdash; Harmonic documentation 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to Harmonic’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Harmonic documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">harmonic module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#harmonic.Bohr"><code class="docutils literal notranslate"><span class="pre">Bohr</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#harmonic.DipoleMoment"><code class="docutils literal notranslate"><span class="pre">DipoleMoment</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.DipoleMoment.mf"><code class="docutils literal notranslate"><span class="pre">DipoleMoment.mf</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.DipoleMoment.dp_moment"><code class="docutils literal notranslate"><span class="pre">DipoleMoment.dp_moment()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#harmonic.Eh_to_J"><code class="docutils literal notranslate"><span class="pre">Eh_to_J</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#harmonic.Energy"><code class="docutils literal notranslate"><span class="pre">Energy</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.Energy.ene"><code class="docutils literal notranslate"><span class="pre">Energy.ene()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#harmonic.FreqAnalysis"><code class="docutils literal notranslate"><span class="pre">FreqAnalysis</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.FreqAnalysis.hess"><code class="docutils literal notranslate"><span class="pre">FreqAnalysis.hess</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.FreqAnalysis.diagonalization"><code class="docutils literal notranslate"><span class="pre">FreqAnalysis.diagonalization()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.FreqAnalysis.freq_mode"><code class="docutils literal notranslate"><span class="pre">FreqAnalysis.freq_mode()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#harmonic.Hess"><code class="docutils literal notranslate"><span class="pre">Hess</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.Hess.analytical_hess"><code class="docutils literal notranslate"><span class="pre">Hess.analytical_hess()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.Hess.mw_hessian"><code class="docutils literal notranslate"><span class="pre">Hess.mw_hessian()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.Hess.numerical_hess"><code class="docutils literal notranslate"><span class="pre">Hess.numerical_hess()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#harmonic.IRPlot"><code class="docutils literal notranslate"><span class="pre">IRPlot</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.IRPlot.x"><code class="docutils literal notranslate"><span class="pre">IRPlot.x</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.IRPlot.y"><code class="docutils literal notranslate"><span class="pre">IRPlot.y</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.IRPlot.plot"><code class="docutils literal notranslate"><span class="pre">IRPlot.plot()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#harmonic.IR_intensity"><code class="docutils literal notranslate"><span class="pre">IR_intensity</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.IR_intensity.mwc"><code class="docutils literal notranslate"><span class="pre">IR_intensity.mwc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.IR_intensity.delta"><code class="docutils literal notranslate"><span class="pre">IR_intensity.delta</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.IR_intensity.dip_moment_grad"><code class="docutils literal notranslate"><span class="pre">IR_intensity.dip_moment_grad</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.IR_intensity.dm_grad"><code class="docutils literal notranslate"><span class="pre">IR_intensity.dm_grad()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.IR_intensity.intensity"><code class="docutils literal notranslate"><span class="pre">IR_intensity.intensity()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#harmonic.MolBuild"><code class="docutils literal notranslate"><span class="pre">MolBuild</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.MolBuild.mol_build"><code class="docutils literal notranslate"><span class="pre">MolBuild.mol_build()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#harmonic.MolOptimize"><code class="docutils literal notranslate"><span class="pre">MolOptimize</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.MolOptimize.name"><code class="docutils literal notranslate"><span class="pre">MolOptimize.name</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.MolOptimize.hess_method"><code class="docutils literal notranslate"><span class="pre">MolOptimize.hess_method</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.MolOptimize.mol"><code class="docutils literal notranslate"><span class="pre">MolOptimize.mol</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.MolOptimize.x_eq"><code class="docutils literal notranslate"><span class="pre">MolOptimize.x_eq</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.MolOptimize.elem"><code class="docutils literal notranslate"><span class="pre">MolOptimize.elem</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.MolOptimize.mf"><code class="docutils literal notranslate"><span class="pre">MolOptimize.mf</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.MolOptimize.freq_list"><code class="docutils literal notranslate"><span class="pre">MolOptimize.freq_list</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.MolOptimize.mwc"><code class="docutils literal notranslate"><span class="pre">MolOptimize.mwc</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.MolOptimize.IR_list"><code class="docutils literal notranslate"><span class="pre">MolOptimize.IR_list</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.MolOptimize.IR_plot"><code class="docutils literal notranslate"><span class="pre">MolOptimize.IR_plot()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.MolOptimize.freq_show"><code class="docutils literal notranslate"><span class="pre">MolOptimize.freq_show()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.MolOptimize.opt"><code class="docutils literal notranslate"><span class="pre">MolOptimize.opt()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#harmonic.Molecule"><code class="docutils literal notranslate"><span class="pre">Molecule</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.Molecule.atom_list"><code class="docutils literal notranslate"><span class="pre">Molecule.atom_list</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.Molecule.coord_list"><code class="docutils literal notranslate"><span class="pre">Molecule.coord_list</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.Molecule.mol_read"><code class="docutils literal notranslate"><span class="pre">Molecule.mol_read()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#harmonic.Oscillator"><code class="docutils literal notranslate"><span class="pre">Oscillator</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#harmonic.Oscillator.oscillator"><code class="docutils literal notranslate"><span class="pre">Oscillator.oscillator()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#harmonic.amu"><code class="docutils literal notranslate"><span class="pre">amu</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#harmonic.m_to_cm"><code class="docutils literal notranslate"><span class="pre">m_to_cm</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Harmonic documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">harmonic module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/harmonic.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-harmonic">
+<span id="harmonic-module"></span><h1>harmonic module<a class="headerlink" href="#module-harmonic" title="Permalink to this heading">¶</a></h1>
+<p>Module for calculating normal mode frequencies and plotting IR spectrum of molecules.</p>
+<p>This module provides classes and methods required for calculating normal mode frequencies and plotting IR spectrum of molecules whose coordinates are given as .xyz files.</p>
+<p class="rubric">Example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>if __name__ == `__main__`:
+  wat=harmonic.MolOptimize(&#39;H2O&#39;,0)
+  wat.freq_show()
+  wat.IR_plot()
+</pre></div>
+</div>
+<dl class="py data">
+<dt class="sig sig-object py" id="harmonic.Bohr">
+<span class="sig-prename descclassname"><span class="pre">harmonic.</span></span><span class="sig-name descname"><span class="pre">Bohr</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">5.29177210903e-11</span></em><a class="headerlink" href="#harmonic.Bohr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bohr radius in meters quoted from <code class="docutils literal notranslate"><span class="pre">scipy.constants</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="harmonic.DipoleMoment">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">harmonic.</span></span><span class="sig-name descname"><span class="pre">DipoleMoment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/harmonic.html#DipoleMoment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#harmonic.DipoleMoment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Dipole moment of the molecule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mol</strong> (<em>pyscf.gto.mole.Mole</em>) – Mole object.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="harmonic.DipoleMoment.mf">
+<span class="sig-name descname"><span class="pre">mf</span></span><a class="headerlink" href="#harmonic.DipoleMoment.mf" title="Permalink to this definition">¶</a></dt>
+<dd><p>RKS object which holds results of executing <code class="docutils literal notranslate"><span class="pre">kernel</span></code> method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Energy.mf</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="harmonic.DipoleMoment.dp_moment">
+<span class="sig-name descname"><span class="pre">dp_moment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/harmonic.html#DipoleMoment.dp_moment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#harmonic.DipoleMoment.dp_moment" title="Permalink to this definition">¶</a></dt>
+<dd><p>DFT calculation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dipole moment.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="harmonic.Eh_to_J">
+<span class="sig-prename descclassname"><span class="pre">harmonic.</span></span><span class="sig-name descname"><span class="pre">Eh_to_J</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4.3597447222071e-18</span></em><a class="headerlink" href="#harmonic.Eh_to_J" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hartree energy in joules quoted from <code class="docutils literal notranslate"><span class="pre">scipy.constants</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="harmonic.Energy">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">harmonic.</span></span><span class="sig-name descname"><span class="pre">Energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/harmonic.html#Energy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#harmonic.Energy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class for calculating energy of the molecule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mol</strong> (<em>pyscf.gto.mole.Mole</em>) – Molecule object.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="harmonic.Energy.ene">
+<span class="sig-name descname"><span class="pre">ene</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/harmonic.html#Energy.ene"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#harmonic.Energy.ene" title="Permalink to this definition">¶</a></dt>
+<dd><p>DFT calculation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>(E,mf)</dt><dd><ul class="simple">
+<li><p><strong>ene</strong> (<cite>numpy.float</cite>) - Energy calculated with DFT method.</p></li>
+<li><p><strong>mf</strong> (<cite>pyscf.dft.rks.RKS</cite>) -RKS object which holds results of executing <code class="docutils literal notranslate"><span class="pre">kernel</span></code> method.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="harmonic.FreqAnalysis">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">harmonic.</span></span><span class="sig-name descname"><span class="pre">FreqAnalysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_eq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hess_method</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/harmonic.html#FreqAnalysis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#harmonic.FreqAnalysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class for calculating normal mode frequencies and corresponding normal mode coordinates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mf</strong> (<em>Energy.mf</em>) – RKS object which holds results of executing <code class="docutils literal notranslate"><span class="pre">kernel</span></code> method.</p></li>
+<li><p><strong>elem</strong> (<em>list</em>) – Element symbols of atoms in the given molecule.</p></li>
+<li><p><strong>x_eq</strong> (<em>numpy.adarray</em>) – Coordinates of atoms in optimized molecule in Bohrs.</p></li>
+<li><p><strong>hess_method</strong> (<em>int</em>) – if 0, hessian is calculated analytically by using <cite>pyscf.hessian</cite>. if not, hessian is calculated numerically.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="harmonic.FreqAnalysis.hess">
+<span class="sig-name descname"><span class="pre">hess</span></span><a class="headerlink" href="#harmonic.FreqAnalysis.hess" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hessian matrix with mass weighted coordinates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Hess.mw_hessian</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="harmonic.FreqAnalysis.diagonalization">
+<span class="sig-name descname"><span class="pre">diagonalization</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/harmonic.html#FreqAnalysis.diagonalization"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#harmonic.FreqAnalysis.diagonalization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Diagonalize the hessian matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>(scipy.linalg.eig[0],scipy.linalg.eig[1])</dt><dd><ul class="simple">
+<li><p><strong>scipy.linalg.eig[0]</strong> (<cite>numpy.ndarray</cite>) - Eigenvalues of the hessian matrix.</p></li>
+<li><p><strong>scipy.linalg.eig[1]</strong> (<cite>pyscf.dft.rks.RKS</cite>) - Eigenvectors of the hessian matrix.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="harmonic.FreqAnalysis.freq_mode">
+<span class="sig-name descname"><span class="pre">freq_mode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/harmonic.html#FreqAnalysis.freq_mode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#harmonic.FreqAnalysis.freq_mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the normal mode frequencies and corresponding normal mode coordinates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>(freq_list,mwc_list)</dt><dd><ul class="simple">
+<li><p><strong>freq_list</strong> (list) - List including all the normal mode frequencies.</p></li>
+<li><p><strong>mwc_list</strong> (list) - List of normal mode coordinates corresponding to each frequency.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="harmonic.Hess">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">harmonic.</span></span><span class="sig-name descname"><span class="pre">Hess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_eq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hess_method</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/harmonic.html#Hess"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#harmonic.Hess" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Hessian matrix of energy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mf</strong> (<em>Energy.mf</em>) – RKS object which holds results of executing <code class="docutils literal notranslate"><span class="pre">kernel</span></code> method.</p></li>
+<li><p><strong>elem</strong> (<em>list</em>) – Element symbols of atoms in the given molecule.</p></li>
+<li><p><strong>x_eq</strong> (<em>numpy.adarray</em>) – Coordinates of atoms in optimized molecule in Bohrs.</p></li>
+<li><p><strong>hess_method</strong> (<em>int</em>) – if 0, hessian is calculated analytically by using <cite>pyscf.hessian</cite>. if not, hessian is calculated numerically.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="harmonic.Hess.analytical_hess">
+<span class="sig-name descname"><span class="pre">analytical_hess</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/harmonic.html#Hess.analytical_hess"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#harmonic.Hess.analytical_hess" title="Permalink to this definition">¶</a></dt>
+<dd><p>Analytically calculate hessian metrix of energy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Analytical hessian matrix in cartesian coordinates.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="harmonic.Hess.mw_hessian">
+<span class="sig-name descname"><span class="pre">mw_hessian</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/harmonic.html#Hess.mw_hessian"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#harmonic.Hess.mw_hessian" title="Permalink to this definition">¶</a></dt>
+<dd><p>Caluculate hessian matrix in mass weighted coordinates.</p>
+<p>Convert unit from Hatree /(amu Bohr*Bohr) to J /(kg m*m).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Hessian matrix in mass weighted coordinates.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="harmonic.Hess.numerical_hess">
+<span class="sig-name descname"><span class="pre">numerical_hess</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/harmonic.html#Hess.numerical_hess"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#harmonic.Hess.numerical_hess" title="Permalink to this definition">¶</a></dt>
+<dd><p>Numerically calculate hessia matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Numerical hessian matrix in cartesian coordinates.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="harmonic.IRPlot">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">harmonic.</span></span><span class="sig-name descname"><span class="pre">IRPlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">freq_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intensity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/harmonic.html#IRPlot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#harmonic.IRPlot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class for plotting IR spectrum.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>freq_list</strong> (<em>FrequencyAnalysis.freq_mode</em>) – List including all the normal mode frequencies.</p></li>
+<li><p><strong>intensity</strong> (<a class="reference internal" href="#harmonic.IR_intensity" title="harmonic.IR_intensity"><em>IR_intensity</em></a>) – Intensity of IR absorption.</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – name of .xyz file.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="harmonic.IRPlot.x">
+<span class="sig-name descname"><span class="pre">x</span></span><a class="headerlink" href="#harmonic.IRPlot.x" title="Permalink to this definition">¶</a></dt>
+<dd><p>oscillated frequencies, horizontal axis</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="harmonic.IRPlot.y">
+<span class="sig-name descname"><span class="pre">y</span></span><a class="headerlink" href="#harmonic.IRPlot.y" title="Permalink to this definition">¶</a></dt>
+<dd><p>IR intensity, vertical axis</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="harmonic.IRPlot.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/harmonic.html#IRPlot.plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#harmonic.IRPlot.plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate IR spectrum in a .png file.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="harmonic.IR_intensity">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">harmonic.</span></span><span class="sig-name descname"><span class="pre">IR_intensity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">freq_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mwc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_eq</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/harmonic.html#IR_intensity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#harmonic.IR_intensity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class for calculating IR abosorption intensity of molecule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>freq_list</strong> (<em>FrequencyAnalysis.freq_mode</em>) – List including all the normal mode frequencies</p></li>
+<li><p><strong>mwc</strong> (<em>FrequencyAnalysis.freq_mode</em>) – List of normal mode coordinates corresponding to each frequency.</p></li>
+<li><p><strong>elem</strong> (<em>list</em>) – Element symbols of atoms in the given molecule.</p></li>
+<li><p><strong>x_eq</strong> (<em>numpy.adarray</em>) – Coordinates of atoms in optimized molecule in Bohrs.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="harmonic.IR_intensity.mwc">
+<span class="sig-name descname"><span class="pre">mwc</span></span><a class="headerlink" href="#harmonic.IR_intensity.mwc" title="Permalink to this definition">¶</a></dt>
+<dd><p>normal mode coordinates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="harmonic.IR_intensity.delta">
+<span class="sig-name descname"><span class="pre">delta</span></span><a class="headerlink" href="#harmonic.IR_intensity.delta" title="Permalink to this definition">¶</a></dt>
+<dd><p>infinitesimal displacement.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="harmonic.IR_intensity.dip_moment_grad">
+<span class="sig-name descname"><span class="pre">dip_moment_grad</span></span><a class="headerlink" href="#harmonic.IR_intensity.dip_moment_grad" title="Permalink to this definition">¶</a></dt>
+<dd><p>gradient of dipole moment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="harmonic.IR_intensity.dm_grad">
+<span class="sig-name descname"><span class="pre">dm_grad</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/harmonic.html#IR_intensity.dm_grad"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#harmonic.IR_intensity.dm_grad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate gradient of dipole moment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>gradient of dipole moment.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>numpy.darray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="harmonic.IR_intensity.intensity">
+<span class="sig-name descname"><span class="pre">intensity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/harmonic.html#IR_intensity.intensity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#harmonic.IR_intensity.intensity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate IR absorption intensity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of IR absorption intensity of each normal mode frequency.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="harmonic.MolBuild">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">harmonic.</span></span><span class="sig-name descname"><span class="pre">MolBuild</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elem</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_eq</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/harmonic.html#MolBuild"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#harmonic.MolBuild" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class for building molecule, whose coordinates of atoms are displaced.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dx</strong> (<em>numpy.ndarray</em>) – Displacement of atoms from optimized coordinates.</p></li>
+<li><p><strong>elem</strong> (<em>list</em>) – Element symbols of atoms.</p></li>
+<li><p><strong>x_eq</strong> (<em>numpy.ndarray</em>) – Coordinates of atoms in optimized molecule in Bohrs.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="harmonic.MolBuild.mol_build">
+<span class="sig-name descname"><span class="pre">mol_build</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/harmonic.html#MolBuild.mol_build"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#harmonic.MolBuild.mol_build" title="Permalink to this definition">¶</a></dt>
+<dd><p>Build Mole object, whose coordinates of atoms are displaced by dx.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Displaced molecule.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>pyscf.gto.mole.Mole</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="harmonic.MolOptimize">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">harmonic.</span></span><span class="sig-name descname"><span class="pre">MolOptimize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hess_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/harmonic.html#MolOptimize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#harmonic.MolOptimize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class for optimizing molecules and showing normal mode frequencies and IR spectrum calculated using optimized structures.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of the xyz file.</p></li>
+<li><p><strong>hess_method</strong> (<em>int</em>) – if 0, hessian is calculated analytically by using <cite>pyscf.hessian</cite>. if not, hessian is calculated numerically.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="harmonic.MolOptimize.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#harmonic.MolOptimize.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of the xyz file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="harmonic.MolOptimize.hess_method">
+<span class="sig-name descname"><span class="pre">hess_method</span></span><a class="headerlink" href="#harmonic.MolOptimize.hess_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>if 0, hessian is calculated analytically by using <cite>pyscf.hessian</cite>. if not, hessian is calculated numerically.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="harmonic.MolOptimize.mol">
+<span class="sig-name descname"><span class="pre">mol</span></span><a class="headerlink" href="#harmonic.MolOptimize.mol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optimized molecule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pyscf.gto.mole.Mole</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="harmonic.MolOptimize.x_eq">
+<span class="sig-name descname"><span class="pre">x_eq</span></span><a class="headerlink" href="#harmonic.MolOptimize.x_eq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Coordinates of atoms in optimized molecule in Bohrs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.adarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="harmonic.MolOptimize.elem">
+<span class="sig-name descname"><span class="pre">elem</span></span><a class="headerlink" href="#harmonic.MolOptimize.elem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Element symbols of atoms in the given molecule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="harmonic.MolOptimize.mf">
+<span class="sig-name descname"><span class="pre">mf</span></span><a class="headerlink" href="#harmonic.MolOptimize.mf" title="Permalink to this definition">¶</a></dt>
+<dd><p>RKS object which holds results of executing <code class="docutils literal notranslate"><span class="pre">kernel</span></code> method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#harmonic.Energy" title="harmonic.Energy">Energy</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="harmonic.MolOptimize.freq_list">
+<span class="sig-name descname"><span class="pre">freq_list</span></span><a class="headerlink" href="#harmonic.MolOptimize.freq_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Frequencies of normal modes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#harmonic.FreqAnalysis" title="harmonic.FreqAnalysis">FreqAnalysis</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="harmonic.MolOptimize.mwc">
+<span class="sig-name descname"><span class="pre">mwc</span></span><a class="headerlink" href="#harmonic.MolOptimize.mwc" title="Permalink to this definition">¶</a></dt>
+<dd><p>normal mode coordinates.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#harmonic.FreqAnalysis" title="harmonic.FreqAnalysis">FreqAnalysis</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="harmonic.MolOptimize.IR_list">
+<span class="sig-name descname"><span class="pre">IR_list</span></span><a class="headerlink" href="#harmonic.MolOptimize.IR_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>IR absorption intensities corresponding to each normal mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#harmonic.IR_intensity" title="harmonic.IR_intensity">IR_intensity</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="harmonic.MolOptimize.IR_plot">
+<span class="sig-name descname"><span class="pre">IR_plot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/harmonic.html#MolOptimize.IR_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#harmonic.MolOptimize.IR_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show the IR spectrum.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="harmonic.MolOptimize.freq_show">
+<span class="sig-name descname"><span class="pre">freq_show</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/harmonic.html#MolOptimize.freq_show"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#harmonic.MolOptimize.freq_show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show the frequency wave number of normal mode vibration.</p>
+<p>Frequency wave number is calculated by <code class="docutils literal notranslate"><span class="pre">FreqAnalysis.freq_mode</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="harmonic.MolOptimize.opt">
+<span class="sig-name descname"><span class="pre">opt</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/harmonic.html#MolOptimize.opt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#harmonic.MolOptimize.opt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optimize coordinates from .xyz file.</p>
+<p>Geometry optimization with DFT calculation by <code class="docutils literal notranslate"><span class="pre">pyscf.geomopt.berny_solver</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Optimized molecule.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>pyscf.gto.mole.Mole</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="harmonic.Molecule">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">harmonic.</span></span><span class="sig-name descname"><span class="pre">Molecule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/harmonic.html#Molecule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#harmonic.Molecule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>a class for reading .xyz file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – name of .xyz file.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="harmonic.Molecule.atom_list">
+<span class="sig-name descname"><span class="pre">atom_list</span></span><a class="headerlink" href="#harmonic.Molecule.atom_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of the element symbol of atoms.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="harmonic.Molecule.coord_list">
+<span class="sig-name descname"><span class="pre">coord_list</span></span><a class="headerlink" href="#harmonic.Molecule.coord_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of the coordinates of each atom.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="harmonic.Molecule.mol_read">
+<span class="sig-name descname"><span class="pre">mol_read</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/harmonic.html#Molecule.mol_read"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#harmonic.Molecule.mol_read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read .xyz file, and extract element symbol and coordinates of atoms.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>(atom_list,coord_list)</dt><dd><ul class="simple">
+<li><p><strong>atom_list</strong> (list) - List of the element symbol of atoms.</p></li>
+<li><p><strong>coord_list</strong> (list) - List of the coordinates of each atom.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="harmonic.Oscillator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">harmonic.</span></span><span class="sig-name descname"><span class="pre">Oscillator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">freq_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intensity</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/harmonic.html#Oscillator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#harmonic.Oscillator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class for oscillating IR intensity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>freq_list</strong> (<a class="reference internal" href="#harmonic.FreqAnalysis" title="harmonic.FreqAnalysis"><em>FreqAnalysis</em></a>) – List including all the normal mode frequencies.</p></li>
+<li><p><strong>intensity</strong> (<a class="reference internal" href="#harmonic.IR_intensity" title="harmonic.IR_intensity"><em>IR_intensity</em></a>) – Intensity of IR absorption.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="harmonic.Oscillator.oscillator">
+<span class="sig-name descname"><span class="pre">oscillator</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/harmonic.html#Oscillator.oscillator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#harmonic.Oscillator.oscillator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Oscillate IR intensity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>(x,y)</dt><dd><ul class="simple">
+<li><p><strong>x</strong> (numpy.darray): frequency wave number between 200 and 3500(cm^-1). x-axis of IR spectrum.</p></li>
+<li><p><strong>y</strong> (numpy.darray): IR intensity of each x. y-axis of IR spectrum.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="harmonic.amu">
+<span class="sig-prename descclassname"><span class="pre">harmonic.</span></span><span class="sig-name descname"><span class="pre">amu</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.6605390666e-27</span></em><a class="headerlink" href="#harmonic.amu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Atomic mass constants in kilograms quoted from <code class="docutils literal notranslate"><span class="pre">scipy.constats</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="harmonic.m_to_cm">
+<span class="sig-prename descclassname"><span class="pre">harmonic.</span></span><span class="sig-name descname"><span class="pre">m_to_cm</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">100</span></em><a class="headerlink" href="#harmonic.m_to_cm" title="Permalink to this definition">¶</a></dt>
+<dd><p>metets in centimeters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Harmonic’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, ukishida.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
